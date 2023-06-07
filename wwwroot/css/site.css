@@ -1,0 +1,121 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custom-table {
+    width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 8px;
+    text-align: center;
+}
+
+.custom-table .btn {
+    margin-right: 5px;
+}
+
+/* Agrega esta regla */
+.table-dark {
+    background-color: black;
+     
+}
+.custom-header {
+    background-color: black;
+    padding: 10px;
+    border-bottom: 3px solid #2496e9;
+    text-align: center;
+}
+.custom-brand {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background-color: white;
+    background-color: black;
+    color: black;
+}
+.custom-net {
+    color: aquamarine;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px; /* Ajusta los valores de padding según tu preferencia */
+    border-radius: 10px;
+    background-color: lightblue;
+    color: black;
+    margin-right: 10px; /* Agrega margen derecho para separar los botones */
+}
+.nav-link.btn.btn-link.text-danger.border- {
+    border: 2px solid red; /* Reemplaza "red" con el color deseado para el borde */
+    background-color: #f8f9fa; /* Reemplaza "#f8f9fa" con el color deseado para el fondo */
+    /* Opcional: Agrega otros estilos según tus necesidades */
+}
+.custom-table th, .custom-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+    .custom-table th {
+        background-color: red;
+    }
+    .custom-table tr:nth-child(even) {
+        background-color: #2496e9;
+    }
+    .custom-table tr:hover {
+        background-color: cornsilk;
+    }
+
+/* Cambiar el color del botón de búsqueda */
+.dataTables_filter label input[type="search"] {
+    background-color: navy; /* Cambiar el color de fondo del campo de búsqueda */
+    color: #ffffff; /* Cambiar el color del texto del campo de búsqueda */
+}
+
+/* Cambiar la forma del botón de búsqueda */
+.dataTables_filter label input[type="search"] {
+    border-radius: 20px; /* Cambiar el radio de las esquinas del campo de búsqueda */
+    padding: 10px 10px; /* Cambiar el espaciado interno del campo de búsqueda */
+}
+
+
+    /* Agrega cualquier otro estilo personalizado que desees */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 

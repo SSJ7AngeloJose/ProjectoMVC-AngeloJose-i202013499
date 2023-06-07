@@ -1,0 +1,132 @@
+﻿@model IEnumerable<MiProyectoJ8.Models.SistemaLeadEntity>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+
+@{
+    ViewData["Title"] = "Aplicacion de gestion de Usuarios";
+}
+<h1 class="text-center" style="color: #333; font-size: 48px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px #aaa;">Aplicación de Gestión de Usuarios</h1>
+
+<style>
+    body {
+        background-color: azure;
+    }
+</style>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-4">
+        <form asp-action="Index" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar..." aria-label="Buscar" name="searchString" value="@ViewData["CurrentFilter"]">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info  btn-lg" type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mt-4">
+    <div>
+        <a asp-action="Create" class="btn btn-outline-primary mx-auto btn-lg">
+            <i class="bi bi-file-plus-fill"></i> Nuevo Usuario
+        </a>
+    </div>
+
+    <div>
+        <form asp-controller="Leads" asp-action="Index" class="d-inline-block">
+            <button type="submit" class="btn btn-outline-info">Volver a Registros Usuarios</button>
+        </form>
+    </div>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show alert-sm" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<div class="d-flex justify-content-center mt-4">
+    <table id="myTable" class="display custom-table " style="width: 100%">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th>
+                <th>@Html.DisplayNameFor(model => model.Edad)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Dirección)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.Fechadecreacion)</th>
+                <th>@Html.DisplayNameFor(model => model.FechaModificacion)</th>
+                <th>@Html.DisplayNameFor(model => model.EstadoUsuario)</th>
+                <th>@Html.DisplayNameFor(model => model.pais)</th>
+                <th>@Html.DisplayNameFor(model => model.Intereses)</th>
+                <th>@Html.DisplayNameFor(model => model.Rol)</th>
+                <th>@Html.DisplayNameFor(model => model.FuenteWeb)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>             
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Edad)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Dirección)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fechadecreacion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FechaModificacion)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EstadoUsuario)</td>
+                    <td>@Html.DisplayFor(modelItem => item.pais)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Intereses)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Rol)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FuenteWeb)</td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-outline-success btn-lg" asp-route-id="@item.Id"><i class="bi bi-pencil-fill"></i>Editar</a>
+                        <a asp-action="Details" class="btn btn-outline-info btn-lg" asp-route-id="@item.Id"><i class="bi bi-info-circle-fill"></i>Detalles</a>
+                        <a asp-action="Delete" class="btn btn-outline-danger btn-lg" asp-route-id="@item.Id"><i class="bi bi-eraser-fill"></i>Eliminar</a>
+                        <a asp-action="ExportToWord" asp-route-id="@item.Id" class="btn btn-outline-primary">Descargar Word</a>
+                        <a asp-action="ExportToCSV" asp-route-id="@item.Id" class="btn btn-outline-success">Exportar a CSV</a>
+                        <a asp-action="ExportToJson" asp-route-id="@item.Id" class="btn btn-outline-dark">Descargar JSON</a>
+                        <a asp-action="ExportToPDF" asp-route-id="@item.Id" class="btn btn-outline-warning">Descargar PDF</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="row d-flex justify-content-center mt-2">
+    <div class="col-md-4">
+        <div class="mt-2" style="margin-top: 30px; margin-bottom: 15px;">
+            <a asp-action="ExportAllToCSV" class="btn btn-outline-primary btn-block">Exportar a diferentes Formatos CSV</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let table = $('#myTable').DataTable({
+                paging: true,
+                lengthChange: false,
+                searching: true,
+                ordering: true,
+                info: true,
+                autoWidth: false,
+                responsive: true
+            });
+        });
+    </script>
+}

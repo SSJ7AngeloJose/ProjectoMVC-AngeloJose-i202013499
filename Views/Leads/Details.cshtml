@@ -1,0 +1,114 @@
+﻿@model MiProyectoJ8.Models.SistemaLeadEntity
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center" style="color: #333; font-size: 48px; font-family: Arial, sans-serif; text-shadow: 2px 2px 4px #aaa;">Detalle</h1>
+<style>
+    form {
+        background-color: palegreen;
+        padding: 50px;
+        border-radius: 50px;
+        border-color: black;
+    }
+
+    .details-list {
+        border: 1px solid red;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #aad3ff;
+    }
+</style>
+
+<div>
+    <div class="alert alert-info" role="alert">
+        ¡Héchale un vistazo Informacion!
+    </div>
+    <hr />
+    <dl class="row details-list">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dirección)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dirección)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fechadecreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fechadecreacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaModificacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaModificacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EstadoUsuario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstadoUsuario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Intereses)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Intereses)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FuenteWeb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FuenteWeb)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" style="display: inline-block; padding: 10px 20px; background-color: #ffc107; color: white; text-decoration: none; border-radius: 5px;">Editar</a> |
+    <a asp-action="Index" style="display: inline-block; padding: 10px 20px; background-color: #dc3545; color: white; text-decoration: none; border-radius: 5px;">Regresar al Menú Principal</a>
+
+</div>
